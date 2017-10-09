@@ -1,7 +1,8 @@
 //Based on the documentation http://docs2x.smartfoxserver.com/api-docs/jsdoc/client/
 
-declare module SFS2X {
+export = SFS2X;
 
+declare namespace SFS2X {
     interface LoginConfig {
         /**
          * The IP address or host name of the SmartFoxServer 2X instance to connect to.
@@ -37,52 +38,103 @@ declare module SFS2X {
      * description of the parameters available for each event.
      */
     class SFSEvent {
-        static ADMIN_MESSAGE: string;
-        static CONNECTION: string;
-        static CONNECTION_LOST: string;
-        static INVITATION: string;
-        static INVITATION_REPLY: string;
-        static INVITATION_REPLY_ERROR: string;
-        static MMOITEM_VARIABLES_UPDATE: string;
-        static MODERATOR_MESSAGE: string;
-        static OBJECT_MESSAGE: string;
-        static PLAYER_TO_SPECTATOR: string;
-        static PLAYER_TO_SPECTATOR_ERROR: string;
-        static PRIVATE_MESSAGE: string;
-        static PROXIMITY_LIST_UPDATE: string;
-        static PUBLIC_MESSAGE: string;
-        static ROOM_CAPACITY_CHANGE: string;
-        static ROOM_CAPACITY_CHANGE_ERROR: string;
-        static ROOM_FIND_RESULT: string;
-        static ROOM_NAME_CHANGE: string;
-        static ROOM_NAME_CHANGE_ERROR: string;
-        static ROOM_PASSWORD_STATE_CHANGE: string;
-        static ROOM_PASSWORD_STATE_CHANGE_ERROR: string;
-        static ROOM_REMOVE: string;
-        static SOCKET_ERROR: string;
-        static SPECTATOR_TO_PLAYER: string;
-        static SPECTATOR_TO_PLAYER_ERROR: string;
-        static USER_COUNT_CHANGE: string;
-        static ROOM_JOIN_ERROR: string;
-        static USER_FIND_RESULT: string;
-        static LOGIN: string;
-        static ROOM_JOIN: string;
-        static ROOM_ADD: string;
-        static ROOM_CREATION_ERROR: string;
-        static LOGIN_ERROR: string;
-        static USER_ENTER_ROOM: string;
-        static USER_EXIT_ROOM: string;
-        static USER_VARIABLES_UPDATE: string;
-        static LOGOUT: string;
-        static PING_PONG: string;
-        static EXTENSION_RESPONSE: string;
-        static ROOM_GROUP_SUBSCRIBE: string;
-        static ROOM_GROUP_SUBSCRIBE_ERROR: string;
-        static ROOM_GROUP_UNSUBSCRIBE: string;
-        static ROOM_GROUP_UNSUBSCRIBE_ERROR: string;
-        static ROOM_VARIABLES_UPDATE: string;
+        static HANDSHAKE: "handshake";
+        static CONNECTION: "connection";
+        static CONNECTION_LOST: "connectionLost";
+        static LOGIN: "login";
+        static LOGIN_ERROR: "loginError";
+        static LOGOUT: "logout";
+        static ROOM_ADD: "roomAdd";
+        static ROOM_CREATION_ERROR: "roomCreationError";
+        static ROOM_REMOVE: "roomRemove";
+        static ROOM_JOIN: "roomJoin";
+        static ROOM_JOIN_ERROR: "roomJoinError";
+        static USER_ENTER_ROOM: "userEnterRoom";
+        static USER_EXIT_ROOM: "userExitRoom";
+        static USER_COUNT_CHANGE: "userCountChange";
+        static PROXIMITY_LIST_UPDATE: "proximityListUpdate";
+        static PLAYER_TO_SPECTATOR: "playerToSpectator";
+        static PLAYER_TO_SPECTATOR_ERROR: "playerToSpectatorError";
+        static SPECTATOR_TO_PLAYER: "spectatorToPlayer";
+        static SPECTATOR_TO_PLAYER_ERROR: "spectatorToPlayerError";
+        static ROOM_NAME_CHANGE: "roomNameChange";
+        static ROOM_NAME_CHANGE_ERROR: "roomNameChangeError";
+        static ROOM_PASSWORD_STATE_CHANGE: "roomPasswordStateChange";
+        static ROOM_PASSWORD_STATE_CHANGE_ERROR: "roomPasswordStateChangeError";
+        static ROOM_CAPACITY_CHANGE: "roomCapacityChange";
+        static ROOM_CAPACITY_CHANGE_ERROR: "roomCapacityChangeError";
+        static PUBLIC_MESSAGE: "publicMessage";
+        static PRIVATE_MESSAGE: "privateMessage";
+        static OBJECT_MESSAGE: "objectMessage";
+        static MODERATOR_MESSAGE: "moderatorMessage";
+        static ADMIN_MESSAGE: "adminMessage";
+        static EXTENSION_RESPONSE: "extensionResponse";
+        static ROOM_VARIABLES_UPDATE: "roomVariablesUpdate";
+        static USER_VARIABLES_UPDATE: "userVariablesUpdate";
+        static MMOITEM_VARIABLES_UPDATE: "mmoItemVariablesUpdate";
+        static ROOM_GROUP_SUBSCRIBE: "roomGroupSubscribe";
+        static ROOM_GROUP_SUBSCRIBE_ERROR: "roomGroupSubscribeError";
+        static ROOM_GROUP_UNSUBSCRIBE: "roomGroupUnsubscribe";
+        static ROOM_GROUP_UNSUBSCRIBE_ERROR: "roomGroupUnsubscribeError";
+        static ROOM_FIND_RESULT: "roomFindResult";
+        static USER_FIND_RESULT: "userFindResult";
+        static INVITATION: "invitation";
+        static INVITATION_REPLY: "invitationReply";
+        static INVITATION_REPLY_ERROR: "invitationReplyError";
+        static PING_PONG: "pingPong";
+        static SOCKET_ERROR: "socketError";
 
         success: boolean;
+    }
+
+    interface SmartFoxEventMap extends SFSEventMap, BuddyEventMap {}
+
+    interface SFSEventMap {
+        "handshake"; // don't have document http://docs2x.smartfoxserver.com/api-docs/jsdoc/client/SFSEvent.html
+        "connection": ConnectionEvent;
+        "connectionLost": ConnectionLostEvent;
+        "login": LoginEvent;
+        "loginError": LoginErrorEvent;
+        "logout": LogoutEvent;
+        "roomAdd": RoomAddEvent;
+        "roomCreationError": RoomCreationErrorEvent;
+        "roomRemove": RoomRemoveEvent;
+        "roomJoin": RoomJoinEvent;
+        "roomJoinError": RoomJoinErrorEvent;
+        "userEnterRoom": UserEnterRoomEvent;
+        "userExitRoom": UserExitRoomEvent;
+        "userCountChange": UserCountChangeEvent;
+        "proximityListUpdate": ProximityListUpdateEvent;
+        "playerToSpectator": PlayerToSpectatorEvent;
+        "playerToSpectatorError": PlayerToSpectatorErrorEvent;
+        "spectatorToPlayer": SpectatorToPlayerEvent;
+        "spectatorToPlayerError": SpectatorToPlayerErrorEvent;
+        "roomNameChange": RoomNameChangeEvent;
+        "roomNameChangeError": RoomNameChangeErrorEvent;
+        "roomPasswordStateChange": RoomPasswordStateChangeEvent;
+        "roomPasswordStateChangeError": RoomPasswordStateChangeErrorEvent;
+        "roomCapacityChange": RoomCapacityChangeEvent;
+        "roomCapacityChangeError": RoomCapacityChangeErrorEvent;
+        "publicMessage": PublicMessageEvent;
+        "privateMessage": PrivateMessageEvent;
+        "objectMessage": ObjectMessageEvent;
+        "moderatorMessage": ModeratorMessageEvent;
+        "adminMessage": AdminMessageEvent;
+        "extensionResponse": ExtensionResponseEvent;
+        "roomVariablesUpdate": RoomVariablesUpdateEvent;
+        "userVariablesUpdate": UserVariablesUpdateEvent;
+        "mmoItemVariablesUpdate": MMOItemVariablesUpdateEvent;
+        "roomGroupSubscribe": RoomGroupSubscribeEvent;
+        "roomGroupSubscribeError": RoomGroupSubscribeErrorEvent;
+        "roomGroupUnsubscribe": RoomGroupUnsubscribeEvent;
+        "roomGroupUnsubscribeError": RoomGroupUnsubscribeErrorEvent;
+        "roomFindResult": RoomFindResultEvent;
+        "userFindResult": UserFindResultEvent;
+        "invitation": InvitationEvent;
+        "invitationReply": InvitationReplyEvent;
+        "invitationReplyError": InvitationReplyErrorEvent;
+        "pingPong": PingPongEvent;
+        "socketError": SocketErrorEvent;
     }
 
     enum SFSDataType {
@@ -116,7 +168,11 @@ declare module SFS2X {
     }
 
     class Vec3D {
-        //TODO: describe
+        constructor(px: number, py: number, pz?: number, useFloats?: boolean);
+        px: number;
+        py: number;
+        pz?: number;
+        useFloats?: boolean;
     }
 
     class SFSObject {
@@ -773,21 +829,29 @@ declare module SFS2X {
     }
 
 
-    class ClientDisconnectionReason {
-        static IDLE: string;
-        static KICK: string;
-        static BAN: string;
-        static MANUAL: string;
-        static UNKNOWN: string;
-
-        getReason(value: number): string;
+    enum ClientDisconnectionReason {
+        IDLE = "idle",
+        KICK = "kick",
+        BAN = "ban",
+        MANUAL = "manual",
+        UNKNOWN = "unknown"
+        // getReason(value: number): string;
     }
 
     class LoggerEvent {
-        static DEBUG: string;
-        static INFO: string;
-        static WARNING: string;
-        static ERROR: string;
+        static readonly DEBUG: "debug";
+        static readonly INFO: "info";
+        static readonly WARNING: "warn";
+        static readonly ERROR: "error";
+
+        message: string;
+    }
+
+    interface LoggerEventMap {
+        "debug": LoggerEvent;
+        "info": LoggerEvent;
+        "warn": LoggerEvent;
+        "error": LoggerEvent;
     }
 
     /**
@@ -796,7 +860,6 @@ declare module SFS2X {
      * Accessing the logger instance allows to control the client-side logging level by means of the setLevel() method.
      */
     interface Logger {
-
         enableConsoleOutput: boolean;
         enableEventDispatching: boolean;
         /**
@@ -818,9 +881,9 @@ declare module SFS2X {
          * "parent scope" for the callback function, thus providing context (i.e. access to variables and other mehtods)
          * to the function itself.
          */
-        addEventListener(evtType: LoggerEvent, callback: (data: any) => any, scope: any);
+        addEventListener<K extends keyof LoggerEventMap>(evtType: K, callback: (ev: LoggerEventMap[K]) => void, scope?: any): void;
 
-        removeEventListener(evtType: LoggerEvent, callback: () => any);
+        removeEventListener<K extends keyof LoggerEventMap>(evtType: K, callback: (ev: LoggerEventMap[K]) => void);
 
         debug(data: any): void;
 
@@ -954,7 +1017,15 @@ declare module SFS2X {
          * "parent scope" for the callback function, thus providing context
          * (i.e. access to variables and other mehtods) to the function itself.
          */
-        addEventListener(evtType: string, listener: Function, scope?: any): void;
+        addEventListener<K extends keyof SmartFoxEventMap>(evtType: K, listener: (ev: SmartFoxEventMap[K]) => void, scope?: any): void;
+
+        /**
+         * Removes an event listener.
+         *
+         * @param evtType The type of event to remove, among those available in the SFSevent and SFSBuddyEvent classes.
+         * @param listener The listener function to be removed.
+         */
+        removeEventListener<K extends keyof SmartFoxEventMap>(evtType: K, listener: (ev: SmartFoxEventMap[K]) => void): void
 
         /**
          * Establishes a connection between the client and a SmartFoxServer 2X instance.
@@ -1043,14 +1114,6 @@ declare module SFS2X {
         getRoomListFromGroup(groupId: string): SFSRoom[];
 
         /**
-         * Removes an event listener.
-         *
-         * @param evtType The type of event to remove, among those available in the SFSevent and SFSBuddyEvent classes.
-         * @param listener The listener function to be removed.
-         */
-        removeEventListener(evtType: string, listener: Function): void
-
-        /**
          * Sends a request to the server.
          *
          * All the available request objects can be found under the Requests namespace.
@@ -1104,70 +1167,81 @@ declare module SFS2X {
         toString(): string;
     }
 
+    interface BuddyEventMap {
+        "buddyListInit": BuddyListInitEvent;
+        "buddyAdd": BuddyAddEvent;
+        "buddyRemove": BuddyRemoveEvent;
+        "buddyBlock": BuddyBlockEvent;
+        "buddyError": BuddyErrorEvent;
+        "buddyOnlineStateChange": BuddyOnlineStateChangeEvent;
+        "buddyVariablesUpdate": BuddyVariablesUpdateEvent;
+        "buddyMessage": BuddyMessageEvent;
+    }
+
     class SFSBuddyEvent {
-        BUDDY_LIST_INIT: "buddyListInit";
-        BUDDY_ADD: "buddyAdd";
-        BUDDY_REMOVE: "buddyRemove";
-        BUDDY_BLOCK: "buddyBlock";
-        BUDDY_ERROR: "buddyError";
-        BUDDY_ONLINE_STATE_CHANGE: "buddyOnlineStateChange";
-        BUDDY_VARIABLES_UPDATE: "buddyVariablesUpdate";
-        BUDDY_MESSAGE: "buddyMessage";
+        static BUDDY_LIST_INIT: "buddyListInit";
+        static BUDDY_ADD: "buddyAdd";
+        static BUDDY_REMOVE: "buddyRemove";
+        static BUDDY_BLOCK: "buddyBlock";
+        static BUDDY_ERROR: "buddyError";
+        static BUDDY_ONLINE_STATE_CHANGE: "buddyOnlineStateChange";
+        static BUDDY_VARIABLES_UPDATE: "buddyVariablesUpdate";
+        static BUDDY_MESSAGE: "buddyMessage";
     }
-    interface IBUDDY_ADD {
+    interface BuddyAddEvent {
         buddy: SFSBuddy;
     }
 
-    interface IBUDDY_BLOCK {
+    interface BuddyBlockEvent {
         buddy: SFSBuddy;
     }
 
-    interface IBUDDY_ERROR {
+    interface BuddyErrorEvent {
         errorMessage: string;
         errorCode: number;
     }
 
-    interface IBUDDY_LIST_INIT {
+    interface BuddyListInitEvent {
         buddyList: SFSBuddy[];
         myVariables: SFSBuddyVariable[];
     }
 
-    interface IBUDDY_MESSAGE {
+    interface BuddyMessageEvent {
         buddy: SFSBuddy;
         isItMe: boolean;
         message: string;
         data: SFSObject;
     }
 
-    interface IBUDDY_ONLINE_STATE_CHANGE {
+    interface BuddyOnlineStateChangeEvent {
         buddy: SFSBuddy;
         isItMe: boolean;
     }
 
-    interface IBUDDY_REMOVE {
+    interface BuddyRemoveEvent {
         buddy: SFSBuddy;
     }
 
-    interface IBUDDY_VARIABLES_UPDATE {
+    interface BuddyVariablesUpdateEvent {
         buddy: SFSBuddy;
         isItMe: boolean;
         changedVars: string[];
     }
-    interface IADMIN_MESSAGE {
+    interface AdminMessageEvent {
         sender: SFSUser;
         message: string;
         data: SFSObject;
     }
 
-    interface ICONNECTION {
+    interface ConnectionEvent {
         success: boolean;
     }
 
-    interface ICONNECTION_LOST {
-        reason: string;
+    interface ConnectionLostEvent {
+        reason: ClientDisconnectionReason;
     }
 
-    interface IEXTENSION_RESPONSE {
+    interface ExtensionResponseEvent {
         cmd: string;
         params: SFSObject;
         sourceRoom: number;
@@ -1180,33 +1254,32 @@ declare module SFS2X {
         readonly params: SFSObject;
         readonly secondsForAnswer: number;
     }
-    interface IINVITATION {
+    interface InvitationEvent {
         invitation: SFSInvitation;
     }
 
-    interface IINVITATION_REPLY {
+    interface InvitationReplyEvent {
         invitee: SFSUser;
         reply: number;
         data: SFSObject;
     }
 
-    interface IINVITATION_REPLY_ERROR {
+    interface InvitationReplyErrorEvent {
         errorMessage: string;
         errorCode: number;
     }
 
-    interface ILOGIN {
+    interface LoginEvent {
         user: SFSUser;
         data: SFSObject;
     }
 
-    interface ILOGIN_ERROR {
+    interface LoginErrorEvent {
         errorMessage: string;
         errorCode: number;
     }
 
-    interface ILOGOUT {
-
+    interface LogoutEvent {
     }
 
     class MMOItemVariable extends BaseVariable {
@@ -1223,171 +1296,171 @@ declare module SFS2X {
         getVariables(): MMOItemVariable[];
         toString(): string;
     }
-    interface IMMOITEM_VARIABLES_UPDATE {
+    interface MMOItemVariablesUpdateEvent {
         room: MMORoom;
         mmoItem: MMOItem;
         changedVars: string[];
     }
 
-    interface IMODERATOR_MESSAGE {
+    interface ModeratorMessageEvent {
         sender: SFSUser;
         message: string;
         data: SFSObject;
     }
 
-    interface IOBJECT_MESSAGE {
+    interface ObjectMessageEvent {
         sender: SFSUser;
         message: string;
     }
 
-    interface IPING_PONG {
+    interface PingPongEvent {
         lagValue: number;
     }
 
-    interface IPLAYER_TO_SPECTATOR {
+    interface PlayerToSpectatorEvent {
         room: SFSRoom;
         user: SFSUser;
     }
 
-    interface IPLAYER_TO_SPECTATOR_ERROR {
+    interface PlayerToSpectatorErrorEvent {
         errorMessage: string;
         errorCode: number;
     }
 
-    interface IPRIVATE_MESSAGE {
+    interface PrivateMessageEvent {
         sender: SFSUser;
         message: string;
         data: SFSObject;
     }
 
-    interface IPROXIMITY_LIST_UPDATE {
+    interface ProximityListUpdateEvent {
         addedUsers: SFSUser[];
         removedUsers: SFSUser[];
         addedItems: MMOItem[];
         removedItems: MMOItem[];
     }
 
-    interface IPUBLIC_MESSAGE {
+    interface PublicMessageEvent {
         room: SFSRoom;
         sender: SFSUser;
         message: string;
         data: SFSObject;
     }
 
-    interface IROOM_ADD {
+    interface RoomAddEvent {
         room: SFSRoom;
     }
 
-    interface IROOM_CAPACITY_CHANGE {
+    interface RoomCapacityChangeEvent {
         room: SFSRoom;
     }
 
-    interface IROOM_CAPACITY_CHANGE_ERROR {
+    interface RoomCapacityChangeErrorEvent {
         errorMessage: string;
         errorCode: number;
     }
 
-    interface IROOM_CREATION_ERROR {
+    interface RoomCreationErrorEvent {
         errorMessage: string;
         errorCode: number;
     }
 
-    interface IROOM_FIND_RESULT {
+    interface RoomFindResultEvent {
         rooms: SFSRoom[];
     }
 
-    interface IROOM_GROUP_SUBSCRIBE {
+    interface RoomGroupSubscribeEvent {
         groupId: string;
         newRooms: SFSRoom[];
     }
 
-    interface IROOM_GROUP_SUBSCRIBE_ERROR {
+    interface RoomGroupSubscribeErrorEvent {
         errorMessage: string;
         errorCode: number;
     }
 
-    interface IROOM_GROUP_UNSUBSCRIBE {
+    interface RoomGroupUnsubscribeEvent {
         groupId: string;
     }
 
-    interface IROOM_GROUP_UNSUBSCRIBE_ERROR {
+    interface RoomGroupUnsubscribeErrorEvent {
         errorMessage: string;
         errorCode: number;
     }
 
-    interface IROOM_JOIN {
+    interface RoomJoinEvent {
         room: SFSRoom;
     }
 
-    interface IROOM_JOIN_ERROR {
+    interface RoomJoinErrorEvent {
         errorMessage: string;
         errorCode: number;
     }
 
-    interface IROOM_NAME_CHANGE {
+    interface RoomNameChangeEvent {
         room: SFSRoom;
         oldName: string;
     }
 
-    interface IROOM_NAME_CHANGE_ERROR {
+    interface RoomNameChangeErrorEvent {
         errorMessage: string;
         errorCode: number;
     }
 
-    interface IROOM_PASSWORD_STATE_CHANGE {
+    interface RoomPasswordStateChangeEvent {
         room: SFSRoom;
     }
 
-    interface IROOM_PASSWORD_STATE_CHANGE_ERROR {
+    interface RoomPasswordStateChangeErrorEvent {
         errorMessage: string;
         errorCode: number;
     }
 
-    interface IROOM_REMOVE {
+    interface RoomRemoveEvent {
         room: SFSRoom;
     }
 
-    interface IROOM_VARIABLES_UPDATE {
+    interface RoomVariablesUpdateEvent {
         room: SFSRoom;
         changedVars: string[];
     }
 
-    interface ISOCKET_ERROR {
+    interface SocketErrorEvent {
         errorMessage: string;
     }
 
-    interface ISPECTATOR_TO_PLAYER {
+    interface SpectatorToPlayerEvent {
         room: SFSRoom;
         user: SFSUser;
         playerId: number;
     }
 
-    interface ISPECTATOR_TO_PLAYER_ERROR {
+    interface SpectatorToPlayerErrorEvent {
         errorMessage: string;
         errorCode: number;
     }
 
-    interface IUSER_COUNT_CHANGE {
+    interface UserCountChangeEvent {
         room: SFSRoom;
         uCount: number;
         sCount: number;
     }
 
-    interface IUSER_ENTER_ROOM {
+    interface UserEnterRoomEvent {
         user: SFSUser;
         room: SFSRoom;
     }
 
-    interface IUSER_EXIT_ROOM {
+    interface UserExitRoomEvent {
         user: SFSUser;
         room: SFSRoom;
     }
 
-    interface IUSER_FIND_RESULT {
+    interface UserFindResultEvent {
         users: SFSUser[];
     }
 
-    interface IUSER_VARIABLES_UPDATE {
+    interface UserVariablesUpdateEvent {
         user: SFSUser;
         changedVars: string[];
     }
