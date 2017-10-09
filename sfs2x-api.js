@@ -1784,6 +1784,7 @@ http://www.smartfoxserver.com
         141: [function (_dereq_, module, exports) {
             "use strict";
             Object.defineProperty(exports, "__esModule", {value: true});
+            exports.SFSUser = undefined;
             exports.SFSRoom = exports.SetBuddyVariablesRequest = exports.RemoveBuddyRequest = exports.InitBuddyListRequest = exports.GoOnlineRequest = exports.BuddyMessageRequest = exports.BlockBuddyRequest = exports.AddBuddyRequest = exports.SetUserPositionRequest = exports.QuickJoinGameRequest = exports.JoinRoomInvitationRequest = exports.InviteUsersRequest = exports.InvitationReplyRequest = exports.CreateSFSGameRequest = exports.BanUserRequest = exports.KickUserRequest = exports.ExtensionRequest = exports.FindUsersRequest = exports.FindRoomsRequest = exports.PlayerToSpectatorRequest = exports.SpectatorToPlayerRequest = exports.UnsubscribeRoomGroupRequest = exports.SubscribeRoomGroupRequest = exports.SetUserVariablesRequest = exports.SetRoomVariablesRequest = exports.AdminMessageRequest = exports.ModeratorMessageRequest = exports.ObjectMessageRequest = exports.PrivateMessageRequest = exports.PublicMessageRequest = exports.ChangeRoomCapacityRequest = exports.ChangeRoomPasswordStateRequest = exports.ChangeRoomNameRequest = exports.LeaveRoomRequest = exports.CreateRoomRequest = exports.JoinRoomRequest = exports.LogoutRequest = exports.LoginRequest = exports.ClientDisconnectionReason = exports.LoggerEvent = exports.LogLevel = exports.SFSErrorCodes = exports.MessageRecipientMode = exports.BanMode = exports.MapLimits = exports.RoomExtension = exports.RoomEvents = exports.RoomPermissions = exports.MMORoomSettings = exports.SFSGameSettings = exports.RoomSettings = exports.UserProperties = exports.RoomProperties = exports.StringMatch = exports.NumberMatch = exports.BoolMatch = exports.LogicOperator = exports.MatchExpression = exports.MMOItemVariable = exports.ReservedBuddyVariables = exports.SFSBuddyVariable = exports.ReservedRoomVariables = exports.SFSRoomVariable = exports.SFSUserVariable = exports.VariableType = exports.UserPrivileges = exports.InvitationReply = exports.Vec3D = exports.SFSArray = exports.SFSObject = exports.SFSDataType = exports.SFSBuddyEvent = exports.SFSEvent = exports.SmartFox = undefined;
             var _SmartFox = _dereq_("./SmartFox");
             Object.defineProperty(exports, "SmartFox", {
@@ -1833,6 +1834,11 @@ http://www.smartfoxserver.com
             Object.defineProperty(exports, "UserPrivileges", {
                 enumerable: true, get: function get() {
                     return _User.UserPrivileges
+                }
+            });
+            Object.defineProperty(exports, "SFSUser", {
+                enumerable: true, get: function get() {
+                    return _User.SFSUser
                 }
             });
             var _Variable = _dereq_("./entities/variables/Variable");
