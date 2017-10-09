@@ -1,5 +1,5 @@
 {
-  "name": "sfs2x",
+  "name": "@ohze/sfs2x",
   "version": "1.7.6",
   "description": "SmartFoxServer 2X HTML5/JavaScript API",
   "main": "index.js",
