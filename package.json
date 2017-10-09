@@ -2,7 +2,7 @@
   "name": "sfs2x",
   "version": "1.7.6",
   "description": "SmartFoxServer 2X HTML5/JavaScript API",
-  "main": "sfs2x-api.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
