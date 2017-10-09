@@ -26,7 +26,7 @@ declare namespace SFS2X {
         debug: boolean;
     }
 
-    export interface SFSDataWrapper {
+    interface SFSDataWrapper {
         type: number;
         value: SFSObject;
     }
