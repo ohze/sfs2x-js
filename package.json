@@ -4,7 +4,9 @@
   "description": "SmartFoxServer 2X HTML5/JavaScript API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\"",
+    "publish-please": "publish-please",
+    "prepublishOnly": "publish-please guard"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,8 @@
   "dependencies": {
     "datastream-js": "^1.0.3",
     "text-encoding": "^0.6.4"
+  },
+  "devDependencies": {
+    "publish-please": "^2.3.1"
   }
 }
