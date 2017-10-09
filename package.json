@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/ohze/sfs2x-js/issues"
   },
-  "homepage": "https://github.com/ohze/sfs2x-js#readme"
+  "homepage": "https://github.com/ohze/sfs2x-js#readme",
+  "dependencies": {
+    "datastream-js": "^1.0.3",
+    "text-encoding": "^0.6.4"
+  }
 }
