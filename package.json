@@ -1,0 +1,22 @@
+{
+  "name": "sfs2x",
+  "version": "1.7.6",
+  "description": "SmartFoxServer 2X HTML5/JavaScript API",
+  "main": "sfs2x-api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ohze/sfs2x-js.git"
+  },
+  "keywords": [
+    "sfs2x"
+  ],
+  "author": "smartfoxserver.com",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/ohze/sfs2x-js/issues"
+  },
+  "homepage": "https://github.com/ohze/sfs2x-js#readme"
+}
