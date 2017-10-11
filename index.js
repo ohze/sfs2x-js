@@ -3,9 +3,9 @@ SmartFoxServer 2X HTML5/JavaScript API
 (c) gotoAndPlay | All rights reserved
 http://www.smartfoxserver.com
 */
-var DataStream = require("datastream-js");
-var text_encoding1 = require("text-encoding");
-var TextEncoder = text_encoding1.TextEncoder, TextDecoder = text_encoding1.TextDecoder;
+import DataStream from "datastream-js";
+import {TextEncoder, TextDecoder} from "text-encoding";
+import {inflate as pakoInflate, deflate as pakoDeflate} from "pako-es";
 
 (function (f) {
     if (typeof exports === "object" && typeof module !== "undefined") {
@@ -4462,13 +4462,11 @@ var TextEncoder = text_encoding1.TextEncoder, TextDecoder = text_encoding1.TextD
                     }
                 }, {
                     key: "decompress", value: function decompress(byteBuff) {
-                        var inflate = new Zlib.Inflate(byteBuff);
-                        return inflate.decompress()
+                        return pakoInflate(byteBuff)
                     }
                 }, {
                     key: "compress", value: function compress(byteBuff) {
-                        var deflate = new Zlib.Deflate(byteBuff);
-                        return deflate.compress()
+                        return pakoDeflate(byteBuff)
                     }
                 }, {
                     key: "maxMessageSize", get: function get() {
