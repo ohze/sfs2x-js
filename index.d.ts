@@ -927,10 +927,37 @@ declare namespace SFS2X {
         ERROR
     }
 
+    class EventDispatcher {
+        /**
+         * Registers an event listener function that will receive notification of an event.
+         * If you no longer need an event listener, remove it by calling the removeEventListener() method, or memory
+         * problems could result. In fact event listeners are not automatically removed from memory.
+         *
+         * @param evtType The type of event to listen to, among those available in the SFSevent and SFSBuddyEvent classes.
+         * @param listener The listener function that processes the event. This function should accept an object as its
+         * only parameter, which in turn contains the event parameters.
+         * @param scope The object that acts as a context for the event listener: it is the object that acts as a
+         * "parent scope" for the callback function, thus providing context
+         * (i.e. access to variables and other mehtods) to the function itself.
+         */
+        addEventListener<K extends keyof SmartFoxEventMap>(evtType: K, listener: (ev: SmartFoxEventMap[K]) => void, scope?: any): void;
+
+        /**
+         * Removes an event listener.
+         *
+         * @param evtType The type of event to remove, among those available in the SFSevent and SFSBuddyEvent classes.
+         * @param listener The listener function to be removed.
+         */
+        removeEventListener<K extends keyof SmartFoxEventMap>(evtType: K, listener: (ev: SmartFoxEventMap[K]) => void): void;
+
+
+        dispatchEvent<K extends keyof SmartFoxEventMap>(evtType: K, evtObj: SmartFoxEventMap[K]): void;
+    }
+
     /**
      * The SmartFoxServer 2X JavaScript API main class.
      */
-    class SmartFox {
+    class SmartFox extends EventDispatcher {
 
         /**
          * Creates a new SmartFox instance.
@@ -1011,29 +1038,7 @@ declare namespace SFS2X {
          */
         version: string;
 
-        /**
-         * Registers an event listener function that will receive notification of an event.
-         * If you no longer need an event listener, remove it by calling the removeEventListener() method, or memory
-         * problems could result. In fact event listeners are not automatically removed from memory.
-         *
-         * @param evtType The type of event to listen to, among those available in the SFSevent and SFSBuddyEvent classes.
-         * @param listener The listener function that processes the event. This function should accept an object as its
-         * only parameter, which in turn contains the event parameters.
-         * @param scope The object that acts as a context for the event listener: it is the object that acts as a
-         * "parent scope" for the callback function, thus providing context
-         * (i.e. access to variables and other mehtods) to the function itself.
-         */
-        addEventListener<K extends keyof SmartFoxEventMap>(evtType: K, listener: (ev: SmartFoxEventMap[K]) => void, scope?: any): void;
-
-        /**
-         * Removes an event listener.
-         *
-         * @param evtType The type of event to remove, among those available in the SFSevent and SFSBuddyEvent classes.
-         * @param listener The listener function to be removed.
-         */
-        removeEventListener<K extends keyof SmartFoxEventMap>(evtType: K, listener: (ev: SmartFoxEventMap[K]) => void): void
-
-        /**
+       /**
          * Establishes a connection between the client and a SmartFoxServer 2X instance.
          * If no argument is passed, the client will use the settings passed during the SmartFox class instantiation.
          *
