@@ -1,6 +1,6 @@
 {
   "name": "@ohze/sfs2x",
-  "version": "1.7.6",
+  "version": "1.7.6-1",
   "description": "SmartFoxServer 2X HTML5/JavaScript API",
   "main": "index.js",
   "scripts": {
