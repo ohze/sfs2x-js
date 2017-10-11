@@ -23,6 +23,7 @@
   "homepage": "https://github.com/ohze/sfs2x-js#readme",
   "dependencies": {
     "datastream-js": "^1.0.3",
+    "md5": "^2.2.1",
     "pako-es": "^1.0.7",
     "text-encoding": "^0.6.4"
   },
