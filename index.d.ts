@@ -718,6 +718,16 @@ declare namespace SFS2X {
     interface Request {
 
     }
+    class MessageRecipientMode {
+        static readonly TO_USER: 0;
+        static readonly TO_ROOM: 1;
+        static readonly TO_GROUP: 2;
+        static readonly TO_ZONE: 3;
+        constructor(mode: 0 | 1 | 2 | 3, target: SFSUser | SFSRoom | string);
+    }
+    class AdminMessageRequest {
+        constructor(message: string, recipientMode: MessageRecipientMode, params: SFSObject);
+    }
 
     class SetUserVariablesRequest implements Request {
         constructor(userVariables: SFSUserVariable[]);
@@ -1513,5 +1523,52 @@ declare namespace SFS2X {
     interface UserVariablesUpdateEvent {
         user: SFSUser;
         changedVars: string[];
+    }
+
+    class Matcher {
+        readonly symbol: string;
+        readonly type: number;
+    }
+    class BoolMatch extends Matcher {
+        static readonly EQUALS: BoolMatch;
+        static readonly NOT_EQUALS: BoolMatch;
+    }
+    class NumberMatch extends Matcher {
+        static readonly EQUALS: NumberMatch;
+        static readonly GREATER_THAN: NumberMatch;
+        static readonly GREATER_THAN_OR_EQUAL_TO: NumberMatch;
+        static readonly LESS_THAN: NumberMatch;
+        static readonly LESS_THAN_OR_EQUAL_TO: NumberMatch;
+        static readonly NOT_EQUALS: NumberMatch;
+    }
+    class StringMatch extends Matcher {
+        static readonly CONTAINS: StringMatch;
+        static readonly ENDS_WITH: StringMatch;
+        static readonly EQUALS: StringMatch;
+        static readonly NOT_EQUALS: StringMatch;
+        static readonly STARTS_WITH: StringMatch;
+    }
+    enum UserProperties {
+        NAME = "${N}",
+        IS_PLAYER = "${ISP}",
+        IS_SPECTATOR = "${ISS}",
+        IS_NPC = "${ISN}",
+        PRIVILEGE_ID = "${PRID}",
+        IS_IN_ANY_ROOM = "${IAR}"
+    }
+    enum RoomProperties {
+        NAME = "${N}",
+        GROUP_ID = "${G}",
+        MAX_USERS = "${MXU}",
+        MAX_SPECTATORS = "${MXS}",
+        USER_COUNT = "${UC}",
+        SPECTATOR_COUNT = "${SC}",
+        IS_GAME = "${ISG}",
+        IS_PRIVATE = "${ISP}",
+        HAS_FREE_PLAYER_SLOTS = "${HFP}",
+        IS_TYPE_SFSGAME = "${IST}"
+    }
+    class SFSErrorCodes {
+        static setErrorMessage(code: number, message: string);
     }
 }
