@@ -816,6 +816,20 @@ declare namespace SFS2X {
          * @returns The object representing the requested Room; null if no SFSRoom object with the passed id exists in the Rooms list.
          */
         getRoomById(id): SFSRoom;
+
+        /**
+         * Indicates whether the specified Group has been subscribed by the client or not.
+         * @param groupId
+         * @returns {boolean}
+         */
+        containsGroup(groupId): boolean;
+
+        /**
+         * Retrieves the list of Rooms which are part of the specified Room Group.
+         * @param groupId
+         * @returns Array of SFSRoom The list of the available SFSRoom objects
+         */
+        getRoomListFromGroup(groupId): SFSRoom[];
     }
 
     /**
