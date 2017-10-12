@@ -8,25 +8,7 @@ import {TextEncoder, TextDecoder} from "text-encoding";
 import {inflate as pakoInflate, deflate as pakoDeflate} from "pako-es";
 import * as hex_md5 from "md5";
 
-(function (f) {
-    if (typeof exports === "object" && typeof module !== "undefined") {
-        module.exports = f()
-    } else if (typeof define === "function" && define.amd) {
-        define([], f)
-    } else {
-        var g;
-        if (typeof window !== "undefined") {
-            g = window
-        } else if (typeof global !== "undefined") {
-            g = global
-        } else if (typeof self !== "undefined") {
-            g = self
-        } else {
-            g = this
-        }
-        g.SFS2X = f()
-    }
-})(function () {
+const SFS2X = function () {
     var define, module, exports;
     return function e(t, n, r) {
         function s(o, u) {
@@ -11571,14 +11553,82 @@ import * as hex_md5 from "md5";
             "babel-runtime/helpers/createClass": 19
         }]
     }, {}, [141])(141)
-});
-/* ohze removed: use text-encoding & https://github.com/ohze/DataStream.js
+}();
 
-DataStream = function (arrayBuffer, byteOffset, endianness) {
-...
-if (typeof module === "object" && module && module.exports) {
-    module.exports = DataStream
-}
-(function (global) {
-...
-*/
+// export all from `141:`
+export const
+    SFSUser = SFS2X.SFSUser,
+    SFSRoom = SFS2X.SFSRoom,
+    SetBuddyVariablesRequest = SFS2X.SetBuddyVariablesRequest,
+    RemoveBuddyRequest = SFS2X.RemoveBuddyRequest,
+    InitBuddyListRequest = SFS2X.InitBuddyListRequest,
+    GoOnlineRequest = SFS2X.GoOnlineRequest,
+    BuddyMessageRequest = SFS2X.BuddyMessageRequest,
+    BlockBuddyRequest = SFS2X.BlockBuddyRequest,
+    AddBuddyRequest = SFS2X.AddBuddyRequest,
+    SetUserPositionRequest = SFS2X.SetUserPositionRequest,
+    QuickJoinGameRequest = SFS2X.QuickJoinGameRequest,
+    JoinRoomInvitationRequest = SFS2X.JoinRoomInvitationRequest,
+    InviteUsersRequest = SFS2X.InviteUsersRequest,
+    InvitationReplyRequest = SFS2X.InvitationReplyRequest,
+    CreateSFSGameRequest = SFS2X.CreateSFSGameRequest,
+    BanUserRequest = SFS2X.BanUserRequest,
+    KickUserRequest = SFS2X.KickUserRequest,
+    ExtensionRequest = SFS2X.ExtensionRequest,
+    FindUsersRequest = SFS2X.FindUsersRequest,
+    FindRoomsRequest = SFS2X.FindRoomsRequest,
+    PlayerToSpectatorRequest = SFS2X.PlayerToSpectatorRequest,
+    SpectatorToPlayerRequest = SFS2X.SpectatorToPlayerRequest,
+    UnsubscribeRoomGroupRequest = SFS2X.UnsubscribeRoomGroupRequest,
+    SubscribeRoomGroupRequest = SFS2X.SubscribeRoomGroupRequest,
+    SetUserVariablesRequest = SFS2X.SetUserVariablesRequest,
+    SetRoomVariablesRequest = SFS2X.SetRoomVariablesRequest,
+    AdminMessageRequest = SFS2X.AdminMessageRequest,
+    ModeratorMessageRequest = SFS2X.ModeratorMessageRequest,
+    ObjectMessageRequest = SFS2X.ObjectMessageRequest,
+    PrivateMessageRequest = SFS2X.PrivateMessageRequest,
+    PublicMessageRequest = SFS2X.PublicMessageRequest,
+    ChangeRoomCapacityRequest = SFS2X.ChangeRoomCapacityRequest,
+    ChangeRoomPasswordStateRequest = SFS2X.ChangeRoomPasswordStateRequest,
+    ChangeRoomNameRequest = SFS2X.ChangeRoomNameRequest,
+    LeaveRoomRequest = SFS2X.LeaveRoomRequest,
+    CreateRoomRequest = SFS2X.CreateRoomRequest,
+    JoinRoomRequest = SFS2X.JoinRoomRequest,
+    LogoutRequest = SFS2X.LogoutRequest,
+    LoginRequest = SFS2X.LoginRequest,
+    ClientDisconnectionReason = SFS2X.ClientDisconnectionReason,
+    LoggerEvent = SFS2X.LoggerEvent,
+    LogLevel = SFS2X.LogLevel,
+    SFSErrorCodes = SFS2X.SFSErrorCodes,
+    MessageRecipientMode = SFS2X.MessageRecipientMode,
+    BanMode = SFS2X.BanMode,
+    MapLimits = SFS2X.MapLimits,
+    RoomExtension = SFS2X.RoomExtension,
+    RoomEvents = SFS2X.RoomEvents,
+    RoomPermissions = SFS2X.RoomPermissions,
+    MMORoomSettings = SFS2X.MMORoomSettings,
+    SFSGameSettings = SFS2X.SFSGameSettings,
+    RoomSettings = SFS2X.RoomSettings,
+    UserProperties = SFS2X.UserProperties,
+    RoomProperties = SFS2X.RoomProperties,
+    StringMatch = SFS2X.StringMatch,
+    NumberMatch = SFS2X.NumberMatch,
+    BoolMatch = SFS2X.BoolMatch,
+    LogicOperator = SFS2X.LogicOperator,
+    MatchExpression = SFS2X.MatchExpression,
+    MMOItemVariable = SFS2X.MMOItemVariable,
+    ReservedBuddyVariables = SFS2X.ReservedBuddyVariables,
+    SFSBuddyVariable = SFS2X.SFSBuddyVariable,
+    ReservedRoomVariables = SFS2X.ReservedRoomVariables,
+    SFSRoomVariable = SFS2X.SFSRoomVariable,
+    SFSUserVariable = SFS2X.SFSUserVariable,
+    VariableType = SFS2X.VariableType,
+    UserPrivileges = SFS2X.UserPrivileges,
+    InvitationReply = SFS2X.InvitationReply,
+    Vec3D = SFS2X.Vec3D,
+    SFSArray = SFS2X.SFSArray,
+    SFSObject = SFS2X.SFSObject,
+    SFSDataType = SFS2X.SFSDataType,
+    SFSBuddyEvent = SFS2X.SFSBuddyEvent,
+    SFSEvent = SFS2X.SFSEvent,
+    SmartFox = SFS2X.SmartFox;

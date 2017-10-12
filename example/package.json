@@ -1,0 +1,28 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ohze/sfs2x": "https://github.com/ohze/sfs2x-js/releases/download/1.7.6-1/ohze-sfs2x-1.7.6-1.tgz"
+  },
+  "devDependencies": {
+    "@types/webpack": "^3.0.13",
+    "awesome-typescript-loader": "^3.2.3",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-minify": "^0.2.0",
+    "karma-webpack": "^2.0.5",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.3",
+    "webpack": "^3.7.1"
+  }
+}

@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "lib": ["es5",
+            "es2015.core",
+            "es2015.collection",
+            "es2015.iterable",
+            "es2015.promise",
+            "es2015.proxy",
+            "es2015.reflect",
+            "es2015.symbol",
+            "es2016",
+            "es2016.array.include",
+            "es2017.object",
+            "dom",
+            "dom.iterable"],
+        "moduleResolution": "node",
+        "pretty": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    },
+    "include": [
+        "./**/*.ts"
+    ]
+}

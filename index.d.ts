@@ -7,23 +7,23 @@ declare namespace SFS2X {
         /**
          * The IP address or host name of the SmartFoxServer 2X instance to connect to.
          */
-        host: string;
+        host?: string;
         /**
          * The TCP port of the SmartFoxServer 2X instance to connect to.
          */
-        port: number;
+        port?: number;
         /**
          * Use an encrypted SSL connection.
          */
-        useSSL: boolean;
+        useSSL?: boolean;
         /**
          * The IP address or host name of the SmartFoxServer 2X instance to connect to.
          */
-        zone: string;
+        zone?: string;
         /**
          * Indicates whether the client-server messages console debug should be enabled or not.
          */
-        debug: boolean;
+        debug?: boolean;
     }
 
     interface SFSDataWrapper {
@@ -965,7 +965,7 @@ declare namespace SFS2X {
          * For detailed informations please check our website: http://www.smartfoxserver.com.
          * @param config
          */
-        constructor(config: LoginConfig);
+        constructor(config?: LoginConfig);
 
         buddyManager: SFSBuddyManager;
 
@@ -1154,9 +1154,17 @@ declare namespace SFS2X {
     }
 
     class SFSBuddyVariable extends BaseVariable {
+        /**
+         * @param name The name of the Buddy Variable.
+         * @param value  The value of the Buddy Variable; it can also be null.
+         * @param type The type id of the Buddy Variable among those available in the VariableType class.
+         * Usually it is not necessary to pass this parameter, as the type is auto-detected from the value.
+
+         Defaults to -1.
+         */
         constructor(name: string,
                     value: boolean | number | SFSObject | SFSArray | null,
-                    type: number = -1);
+                    type?: number);
 
         static readonly OFFLINE_PREFIX: string;
         readonly isOffline: boolean;

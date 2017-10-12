@@ -1,3 +1,7 @@
 /.idea/
-/node_modules/
+node_modules
+*.js
+*.js.map
+!/index.js
+*sfs2x-*.tgz
 /.publishrc
