@@ -1,8 +1,8 @@
 {
   "name": "@ohze/sfs2x",
-  "version": "1.7.6-3",
+  "version": "1.7.6-4",
   "description": "SmartFoxServer 2X HTML5/JavaScript API",
-  "main": "index.js",
+  "module": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "publish-please": "publish-please",
