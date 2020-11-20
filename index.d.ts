@@ -498,6 +498,8 @@ declare namespace SFS2X {
 
         _setVariables(userVariables: SFSUserVariable[]): void;
 
+        _setVariable(userVariable: SFSUserVariable): void;
+
         _setPlayerId(id: number, room: SFSRoom);
 
         /**
@@ -663,6 +665,14 @@ declare namespace SFS2X {
         getVariable(varName: string): SFSRoomVariable;
 
         getVariables(): SFSRoomVariable[];
+
+        _addUser(user: SFSUser): void;
+
+        _removeUser(user: SFSUser): void;
+
+        _setVariables(roomVariables: SFSRoomVariable[]): void;
+
+        _setVariable(roomVariable: SFSRoomVariable): void;
 
         toString(): string;
     }
