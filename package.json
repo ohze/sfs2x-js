@@ -1,6 +1,6 @@
 {
   "name": "@ohze/sfs2x",
-  "version": "1.7.6-5",
+  "version": "1.7.6-6",
   "description": "SmartFoxServer 2X HTML5/JavaScript API",
   "module": "index.js",
   "scripts": {
@@ -28,6 +28,6 @@
     "text-encoding": "^0.6.4"
   },
   "devDependencies": {
-    "publish-please": "^2.3.1"
+    "publish-please": "^5.5.2"
   }
 }
